@@ -22,11 +22,19 @@ class TestCalculator(unittest.TestCase):
         self.assertAlmostEqual(calculator.div(10, 2), 5.0)
         self.assertAlmostEqual(calculator.div(7, 2), 3.5)
         self.assertAlmostEqual(calculator.div(15, 3), 5.0)
+    def test_divide_by_zero(self):
         with self.assertRaises(ZeroDivisionError):
             calculator.div(1, 0)
     def test_log_invalid_argument(self):
         with self.assertRaises(ValueError):
             calculator.logarithm(10,0)
+    def test_logarithm(self):
+        self.assertAlmostEqual(calculator.logarithm(10, 1000), 3)
+        self.assertAlmostEqual(calculator.logarithm(2, 16), 4)
+        self.assertAlmostEqual(calculator.logarithm(math.e, math.e**4), 4)
+    def test_log_invalid_base(self):
+        with self.assertRaises(ValueError):
+            calculator.logarithm(0,10)
     def test_hypotenuse(self):
         self.assertAlmostEqual(calculator.hypotenuse(3,4), 5.0)
         self.assertAlmostEqual(calculator.hypotenuse(5,12), 13.0)
