@@ -1,3 +1,4 @@
+#https://github.com/jackie-0110/lab11-JC-MD
 import math
 
 def square_root(a): 
@@ -30,4 +31,4 @@ def hypotenuse(a, b):
     try:
         return math.hypot(a, b)  
     except ValueError:
-        raise   
+        raise
